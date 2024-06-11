@@ -18,7 +18,7 @@ class _MainHeader extends State<MainHeader> {
       child: Column(
         children: <Widget> [
           Container(
-            height: 60,
+            height: 64,
             color: Colors.blue,
             child: Center(
               child: SizedBox(
@@ -33,15 +33,15 @@ class _MainHeader extends State<MainHeader> {
                         Navigator.pushNamed(context, '/');
                       },
                       child: Container(
-                        width: 80,
-                        height: 60,
+                        width: 64,
+                        height: 64,
                         color: Colors.transparent,
                         child: Center(
                           child: SizedBox(
-                            width: 40,
-                            height: 40,
+                            width: 32,
+                            height: 32,
                             child: SvgPicture.asset(
-                              'icons/home.svg',  
+                              'assets/icons/home.svg',  
                             )
                           )
                         )
@@ -54,15 +54,15 @@ class _MainHeader extends State<MainHeader> {
                         widget.onPressed();
                       },
                       child: Container(
-                        width: 80,
-                        height: 60,
+                        width: 64,
+                        height: 64,
                         color: Colors.transparent,
                         child: Center(
                           child: SizedBox(
-                            width: 40,
-                            height: 40,
+                            width: 32,
+                            height: 32,
                             child: SvgPicture.asset(
-                              'icons/menu.svg',  
+                              'assets/icons/menu.svg',
                             )
                           )
                         )
@@ -96,7 +96,7 @@ class _MainHeader extends State<MainHeader> {
                             'Category 3', style: TextStyle(color: Colors.white, fontSize: 16)
                           )
                         ),
-                        const SizedBox(width: 20),
+                        const SizedBox(width: 24),
                       ]
                     )
                   ],

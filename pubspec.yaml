@@ -88,5 +88,7 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+  # 사용 중인 에셋 경로(경로를 아래에 추가해야 빌드할 때 포함됨)
   assets:
     - assets/icons/
