@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
-// import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'common/header.dart';
+
+// Home : Games
+// About : Info, Contact
+// Documents : PP, Terms
+// Main Games
 
 void main() {
   runApp(const MyApp());
@@ -49,46 +54,196 @@ class _MainPageState extends State<MainPage> {
         backgroundColor: Colors.black,
         body: Stack(
           children: [
+            // Home
             SingleChildScrollView(
               child: Column(
                 children: [
                   MainHeader(
                     onPressed: setNav,
                   ),
+                  Container(
+                    color: Colors.white,
+                    child: Column(
+                      children: [
+                        Container(
+                          height: 60,
+                          color: Colors.green
+                        ),
+                        Container(
+                          height: 1000
+                        )
+                      ],
+                    ),
+                  )
                 ]
               )
             ),
-            MediaQuery.of(context).size.width <= 600 && isActive ? 
+            MediaQuery.of(context).size.width <= 600 ? 
             // Mobile
             Stack(
               children: [
-                Positioned.fill(
-                  child: GestureDetector(
-                    onTap: () {
-                      setNav();
-                    },
-                    child: Container(
-                      color: Colors.black.withOpacity(0.8),
+                // Nav
+                if (isActive)
+                  Positioned.fill(
+                    child: GestureDetector(
+                      onTap: () {
+                        setNav();
+                      },
+                      child: Container(
+                        color: Colors.black.withOpacity(0.8),
+                      )
                     )
-                  )
-                ),
-                Positioned(
-                  right: 0,
+                  ),
+                AnimatedPositioned(
+                  duration: const Duration(milliseconds: 200),
+                  right: isActive ? 0 : -300,
                   top: 0,
                   bottom: 0,
                   width: 300,
                   child: Container(
                     color: Colors.white,
-                    child: const Column(
+                    child: Column(
                       children: [
-                        Text('Navigation Item 1'),
-                        Text('Navigation Item 2'),
-                        Text('Navigation Item 3'),
-                        // 다른 네비게이션 항목 추가 가능
+                        Row(
+                          children: [
+                            GestureDetector(
+                              onTap: () {
+                                setNav();
+                              },
+                              child: Container(
+                                width: 64,
+                                height: 64,
+                                color: Colors.transparent,
+                                child: Center(
+                                  child: SizedBox(
+                                    width: 32,
+                                    height: 32,
+                                    child: SvgPicture.asset(
+                                      'assets/icons/arrow_forward.svg',
+                                    )
+                                  )
+                                )
+                              )
+                            ),
+                          ]
+                        ),
+                        // const Padding(padding: EdgeInsets.fromLTRB(0, 24, 0, 0)),
+                        Row(
+                          children: [
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.pushNamed(context, '/');
+                              },
+                              child: Row(
+                                children: [
+                                  Container(
+                                    width: 64,
+                                    height: 64,
+                                    color: Colors.transparent,
+                                    child: Center(
+                                      child: SizedBox(
+                                        width: 8,
+                                        height: 8,
+                                        child: SvgPicture.asset(
+                                          'assets/icons/circle.svg',
+                                        )
+                                      )
+                                    )
+                                  ),
+                                  const Text('Home', style: TextStyle(fontWeight: FontWeight.bold))
+                                ],
+                              )
+                            ),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            GestureDetector(
+                              onTap: () {
+                                
+                              },
+                              child: Row(
+                                children: [
+                                  Container(
+                                    width: 64,
+                                    height: 64,
+                                    color: Colors.transparent,
+                                    child: Center(
+                                      child: SizedBox(
+                                        width: 8,
+                                        height: 8,
+                                        child: SvgPicture.asset(
+                                          'assets/icons/circle.svg',
+                                        )
+                                      )
+                                    )
+                                  ),
+                                  const Text('Item 2')
+                                ],
+                              )
+                            ),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            GestureDetector(
+                              onTap: () {
+                                
+                              },
+                              child: Row(
+                                children: [
+                                  Container(
+                                    width: 64,
+                                    height: 64,
+                                    color: Colors.transparent,
+                                    child: Center(
+                                      child: SizedBox(
+                                        width: 8,
+                                        height: 8,
+                                        child: SvgPicture.asset(
+                                          'assets/icons/circle.svg',
+                                        )
+                                      )
+                                    )
+                                  ),
+                                  const Text('Item 3')
+                                ],
+                              )
+                            ),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            GestureDetector(
+                              onTap: () {
+                                
+                              },
+                              child: Row(
+                                children: [
+                                  Container(
+                                    width: 64,
+                                    height: 64,
+                                    color: Colors.transparent,
+                                    child: Center(
+                                      child: SizedBox(
+                                        width: 8,
+                                        height: 8,
+                                        child: SvgPicture.asset(
+                                          'assets/icons/circle.svg',
+                                        )
+                                      )
+                                    )
+                                  ),
+                                  const Text('Item 4')
+                                ],
+                              )
+                            ),
+                          ],
+                        ),
                       ],
                     ),
                   ),
-                ),                
+                ),
               ],
             ) : 
             // Web

@@ -90,5 +90,7 @@ flutter:
   # see https://flutter.dev/custom-fonts/#from-packages
 
   # 사용 중인 에셋 경로(경로를 아래에 추가해야 빌드할 때 포함됨)
+  # 이미지 경로는 'assets/icons/home.svg'와 같이 앞에 assets를 붙인다.
+  # Hot Reload 상태에서 새로 추가된 에셋이 있는 경우 앱 재시작
   assets:
     - assets/icons/

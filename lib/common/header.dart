@@ -23,7 +23,7 @@ class _MainHeader extends State<MainHeader> {
             child: Center(
               child: SizedBox(
                 // margin: const EdgeInsets.fromLTRB(10, 0, 0, 0),
-                width: 1200,
+                width: 1000,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
